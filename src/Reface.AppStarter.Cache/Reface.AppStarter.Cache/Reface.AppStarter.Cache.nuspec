@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>Reface.AppStarter.Cache</id>
+    <version>1.0.0</version>
+    <title>Reface.AppStarter.Cache</title>
+    <authors>ShimizuShiori</authors>
+    <owners>ShimizuShiori</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/ShimizuShiori/Reface.AppStarter.Cache</projectUrl>
+    <description>基于 Reface.AppStarter 实现的缓存功能</description>
+    <copyright>Copyright 2020</copyright>
+    <tags>Reface Cache</tags>
+  </metadata>
+</package>
