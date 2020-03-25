@@ -1,5 +1,4 @@
 ﻿using Reface.AppStarter.Attributes;
-using System;
 
 namespace Reface.AppStarter.Cache.Tests.Services
 {

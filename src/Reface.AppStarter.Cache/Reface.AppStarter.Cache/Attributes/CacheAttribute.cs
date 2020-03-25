@@ -3,6 +3,9 @@ using System;
 
 namespace Reface.AppStarter.Attributes
 {
+    /// <summary>
+    /// 读取缓存、或者将结果保存为缓存的特征。
+    /// </summary>
     [AttributeUsage(AttributeTargets.Method)]
     public class CacheAttribute : CacheAttributeBase
     {
