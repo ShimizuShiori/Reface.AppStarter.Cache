@@ -59,7 +59,7 @@
       <HintPath>..\packages\Reface.AppStarter.1.1.0\lib\net461\Reface.AppStarter.dll</HintPath>
     </Reference>
     <Reference Include="Reface.AppStarter.Proxy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Reface.AppStarter.Proxy.1.0.0\lib\net461\Reface.AppStarter.Proxy.dll</HintPath>
+      <HintPath>..\packages\Reface.AppStarter.Proxy.1.1.0\lib\net461\Reface.AppStarter.Proxy.dll</HintPath>
     </Reference>
     <Reference Include="Reface.CommandBus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Reface.CommandBus.1.1.1\lib\net461\Reface.CommandBus.dll</HintPath>
