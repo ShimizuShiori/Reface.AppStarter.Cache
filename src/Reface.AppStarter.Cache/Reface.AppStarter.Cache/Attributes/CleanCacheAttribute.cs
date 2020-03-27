@@ -9,10 +9,6 @@ namespace Reface.AppStarter.Attributes
     [AttributeUsage(AttributeTargets.Method)]
     public class CleanCacheAttribute : CacheAttributeBase
     {
-        public CleanCacheAttribute()
-        {
-        }
-
         /// <summary>
         /// 
         /// </summary>
