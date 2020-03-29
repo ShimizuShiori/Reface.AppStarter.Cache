@@ -2,10 +2,10 @@
 <package >
   <metadata>
     <id>Reface.AppStarter.Cache</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <title>Reface.AppStarter.Cache</title>
-    <authors>ShimizuShiori</authors>
-    <owners>ShimizuShiori</owners>
+    <authors>Shiori</authors>
+    <owners>Shiori</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/ShimizuShiori/Reface.AppStarter.Cache</projectUrl>
