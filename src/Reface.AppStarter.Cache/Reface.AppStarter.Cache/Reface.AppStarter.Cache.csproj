@@ -95,7 +95,6 @@
     <Compile Include="DefaultCacheKeyGenerator.cs" />
     <Compile Include="DefaultCachePool.cs" />
     <Compile Include="DefaultCacheRelationshipManager.cs" />
-    <Compile Include="Events\CacheCleanedEvent.cs" />
     <Compile Include="ICacheKeyGenerator.cs" />
     <Compile Include="ICachePool.cs" />
     <Compile Include="ICacheRelationshipManager.cs" />
