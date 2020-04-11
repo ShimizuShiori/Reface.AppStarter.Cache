@@ -1,5 +1,8 @@
-﻿using Reface.AppStarter.Proxy;
+﻿using Reface.AppStarter.Cache;
+using Reface.AppStarter.Proxy;
 using System;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace Reface.AppStarter.Attributes
 {
@@ -9,6 +12,8 @@ namespace Reface.AppStarter.Attributes
     [AttributeUsage(AttributeTargets.Method)]
     public class CacheAttribute : CacheAttributeBase
     {
+        public ICacheRelationshipManager CacheRelationshipManager { get; set; }
+
         public CacheAttribute()
         {
         }
@@ -32,6 +37,13 @@ namespace Reface.AppStarter.Attributes
         {
             object result;
             string key = this.GetKeyWithArguments(executingInfo.Method, executingInfo.Arguments);
+
+            IEnumerable<CleanWithAttribute> cleanWithAttributes = executingInfo.Method.GetCustomAttributes<CleanWithAttribute>();
+            foreach (var attr in cleanWithAttributes)
+            {
+                this.CacheRelationshipManager.Register(key, attr);
+            }
+
             if (this.CachePool.TryGet(key, out result))
                 executingInfo.Return(result);
         }

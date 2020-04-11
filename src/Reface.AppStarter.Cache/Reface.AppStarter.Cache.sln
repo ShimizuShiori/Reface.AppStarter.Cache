@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reface.AppStarter.Cache", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reface.AppStarter.Cache.Tests", "Reface.AppStarter.Cache.Tests\Reface.AppStarter.Cache.Tests.csproj", "{28501BE0-A24F-4762-A58D-D2258659843B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCacheInThreads", "TestCacheInThreads\TestCacheInThreads.csproj", "{696AA20A-83D7-408B-A8DC-43AB9F4AAA9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{28501BE0-A24F-4762-A58D-D2258659843B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28501BE0-A24F-4762-A58D-D2258659843B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28501BE0-A24F-4762-A58D-D2258659843B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{696AA20A-83D7-408B-A8DC-43AB9F4AAA9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{696AA20A-83D7-408B-A8DC-43AB9F4AAA9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{696AA20A-83D7-408B-A8DC-43AB9F4AAA9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{696AA20A-83D7-408B-A8DC-43AB9F4AAA9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

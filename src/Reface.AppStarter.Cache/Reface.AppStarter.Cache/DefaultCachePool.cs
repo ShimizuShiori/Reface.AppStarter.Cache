@@ -1,6 +1,8 @@
 ﻿using Reface.AppStarter.Attributes;
+using System;
 using System.Collections.Concurrent;
 using System.Diagnostics;
+using System.Threading;
 
 namespace Reface.AppStarter.Cache
 {
@@ -11,25 +13,22 @@ namespace Reface.AppStarter.Cache
 
         public void Clean(string key)
         {
-            Debug.WriteLine("Cache.Clean");
-            Debug.WriteLine($"\tkey = {key}");
+            Console.WriteLine($"[{Thread.CurrentThread.Name}] Cache.CLN\t[{key}]");
             object value;
             cachePool.TryRemove(key, out value);
         }
 
         public void Set(string key, object value)
         {
-            Debug.WriteLine("Cache.Set");
-            Debug.WriteLine($"\tkey = {key}");
-            Debug.WriteLine($"\tvalue = {value}");
+            Console.WriteLine($"[{Thread.CurrentThread.Name}] Cache.SET\t[{key}] = [{value}]");
             cachePool[key] = value;
         }
 
         public bool TryGet(string key, out object value)
         {
-            Debug.WriteLine("Cache.TryGet");
-            Debug.WriteLine($"\tkey = {key}");
-            return cachePool.TryGetValue(key, out value);
+            bool result = cachePool.TryGetValue(key, out value);
+            Console.WriteLine($"[{Thread.CurrentThread.Name}] Cache.TGT\t[{key}] : {result}");
+            return result;
         }
     }
 }

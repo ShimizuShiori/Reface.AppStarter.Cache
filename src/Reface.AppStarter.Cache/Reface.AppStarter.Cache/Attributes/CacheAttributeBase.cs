@@ -32,7 +32,6 @@ namespace Reface.AppStarter.Attributes
         {
             if (string.IsNullOrEmpty(this.CacheKeyFormatter))
                 this.CacheKeyFormatter = this.CacheKeyGenerator.Generate(methodInfo);
-            Debug.WriteLine($"CacheKeyFormatter = {CacheKeyFormatter}");
             return string.Format(this.CacheKeyFormatter, arguments);
         }
     }

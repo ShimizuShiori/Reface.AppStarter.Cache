@@ -1,4 +1,7 @@
-﻿using Reface.AppStarter.Proxy;
+﻿using Reface.AppStarter.Cache;
+using Reface.AppStarter.Cache.Events;
+using Reface.AppStarter.Proxy;
+using Reface.EventBus;
 using System;
 
 namespace Reface.AppStarter.Attributes
@@ -6,9 +9,12 @@ namespace Reface.AppStarter.Attributes
     /// <summary>
     /// 清除缓存的特征
     /// </summary>
-    [AttributeUsage(AttributeTargets.Method)]
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
     public class CleanCacheAttribute : CacheAttributeBase
     {
+
+        public ICacheRelationshipManager CacheRelationshipManager { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -24,7 +30,13 @@ namespace Reface.AppStarter.Attributes
 
         public override void OnExecuted(ExecutedInfo executedInfo)
         {
-            this.CachePool.Clean(this.GetKeyWithArguments(executedInfo.Method, executedInfo.Arguments));
+            string cacheKey = this.GetKeyWithArguments(executedInfo.Method, executedInfo.Arguments);
+            this.CachePool.Clean(cacheKey);
+            var keysWillBeMoved = this.CacheRelationshipManager.GetCacheKeysWillBeRemovedWith(cacheKey);
+            foreach (var item in keysWillBeMoved)
+            {
+                this.CachePool.Clean(item);
+            }
         }
 
         public override void OnExecuteError(ExecuteErrorInfo executeErrorInfo)

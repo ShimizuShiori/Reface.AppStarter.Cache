@@ -59,10 +59,10 @@
       <HintPath>..\packages\NLog.1.0.0.505\lib\NLog.dll</HintPath>
     </Reference>
     <Reference Include="Reface.AppStarter, Version=0.10.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Reface.AppStarter.1.2.1\lib\net461\Reface.AppStarter.dll</HintPath>
+      <HintPath>..\packages\Reface.AppStarter.1.6.0\lib\net461\Reface.AppStarter.dll</HintPath>
     </Reference>
     <Reference Include="Reface.AppStarter.Proxy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Reface.AppStarter.Proxy.1.1.2\lib\net461\Reface.AppStarter.Proxy.dll</HintPath>
+      <HintPath>..\packages\Reface.AppStarter.Proxy.1.3.0\lib\net461\Reface.AppStarter.Proxy.dll</HintPath>
     </Reference>
     <Reference Include="Reface.CommandBus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Reface.CommandBus.1.1.1\lib\net461\Reface.CommandBus.dll</HintPath>
@@ -87,14 +87,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppContainerBuilders\CacheAppContainerBuilder.cs" />
+    <Compile Include="AppContainers\CacheAppContainer.cs" />
     <Compile Include="AppModules\CacheAppModule.cs" />
     <Compile Include="Attributes\CacheAttributeBase.cs" />
+    <Compile Include="Attributes\CleanWithAttribute.cs" />
     <Compile Include="Attributes\CleanCacheAttribute.cs" />
     <Compile Include="Attributes\CacheAttribute.cs" />
     <Compile Include="DefaultCacheKeyGenerator.cs" />
     <Compile Include="DefaultCachePool.cs" />
+    <Compile Include="DefaultCacheRelationshipManager.cs" />
+    <Compile Include="Events\CacheCleanedEvent.cs" />
     <Compile Include="ICacheKeyGenerator.cs" />
     <Compile Include="ICachePool.cs" />
+    <Compile Include="ICacheRelationshipManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
