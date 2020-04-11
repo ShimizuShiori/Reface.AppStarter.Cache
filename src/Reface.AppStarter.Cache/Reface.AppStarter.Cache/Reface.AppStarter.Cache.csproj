@@ -87,8 +87,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppContainerBuilders\CacheAppContainerBuilder.cs" />
-    <Compile Include="AppContainers\CacheAppContainer.cs" />
     <Compile Include="AppModules\CacheAppModule.cs" />
     <Compile Include="Attributes\CacheAttributeBase.cs" />
     <Compile Include="Attributes\CleanWithAttribute.cs" />
