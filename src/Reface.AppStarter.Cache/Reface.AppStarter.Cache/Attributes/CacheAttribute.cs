@@ -18,6 +18,10 @@ namespace Reface.AppStarter.Attributes
         {
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cacheKeyFormatter">缓存 Key 的 Formatter</param>
         public CacheAttribute(string cacheKeyFormatter) : base(cacheKeyFormatter)
         {
         }

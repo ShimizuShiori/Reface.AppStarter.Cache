@@ -1,5 +1,4 @@
 ﻿using Reface.AppStarter.Attributes;
-using System;
 using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Threading;
