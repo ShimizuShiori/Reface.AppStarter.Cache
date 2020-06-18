@@ -59,17 +59,17 @@
     <Reference Include="NLog, Version=1.0.0.505, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.1.0.0.505\lib\NLog.dll</HintPath>
     </Reference>
-    <Reference Include="Reface.AppStarter, Version=0.10.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Reface.AppStarter.2.0.4\lib\net461\Reface.AppStarter.dll</HintPath>
+    <Reference Include="Reface.AppStarter, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Reface.AppStarter.2.1.7\lib\net461\Reface.AppStarter.dll</HintPath>
     </Reference>
-    <Reference Include="Reface.AppStarter.Proxy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Reface.AppStarter.Proxy.1.4.0\lib\net461\Reface.AppStarter.Proxy.dll</HintPath>
+    <Reference Include="Reface.AppStarter.Proxy, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Reface.AppStarter.Proxy.1.5.0-alpha.1\lib\net461\Reface.AppStarter.Proxy.dll</HintPath>
     </Reference>
-    <Reference Include="Reface.CommandBus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Reface.CommandBus.1.1.1\lib\net461\Reface.CommandBus.dll</HintPath>
+    <Reference Include="Reface.CommandBus, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Reface.CommandBus.2.0.1\lib\net461\Reface.CommandBus.dll</HintPath>
     </Reference>
-    <Reference Include="Reface.EventBus, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Reface.EventBus.3.2.5\lib\net40\Reface.EventBus.dll</HintPath>
+    <Reference Include="Reface.EventBus, Version=3.2.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Reface.EventBus.3.2.7\lib\net40\Reface.EventBus.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -95,11 +95,18 @@
     <Compile Include="Attributes\CacheAttribute.cs" />
     <Compile Include="DefaultCacheKeyGenerator.cs" />
     <Compile Include="DefaultCachePool.cs" />
+    <Compile Include="DefaultCachePoolAccessor.cs" />
     <Compile Include="DefaultCacheRelationshipManager.cs" />
+    <Compile Include="Events\CacheClearedEvent.cs" />
+    <Compile Include="Events\CacheEvent.cs" />
+    <Compile Include="Events\CacheHitEvent.cs" />
+    <Compile Include="Events\CacheSettedEvent.cs" />
+    <Compile Include="ICachePoolAccessor.cs" />
     <Compile Include="ICacheKeyGenerator.cs" />
     <Compile Include="ICachePool.cs" />
     <Compile Include="ICacheRelationshipManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proxies\TriggerCacheEventsProxy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

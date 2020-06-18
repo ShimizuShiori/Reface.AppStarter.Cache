@@ -4,6 +4,7 @@ namespace Reface.AppStarter.Cache.Tests
 {
     [CacheAppModule]
     [ComponentScanAppModule]
+    [ProxyAppModule]
     public class TestAppModule : AppModule
     {
     }
