@@ -10,7 +10,7 @@ namespace Reface.AppStarter.Cache.Tests.Listeners
     {
         public void Handle(CacheEvent @event)
         {
-            Console.WriteLine(@event.Key);
+            Console.WriteLine("EventType = {0}, Key = {1}", @event.GetType().Name, @event.Key);
         }
     }
 }

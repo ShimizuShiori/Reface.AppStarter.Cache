@@ -30,7 +30,13 @@ namespace Reface.AppStarter.Attributes
         {
             if (executedInfo.Source != ReturnedValueSources.OriginalMethod) return;
             string key = this.GetKeyWithArguments(executedInfo.Method, executedInfo.Arguments);
-            this.CachePool.Set(key, executedInfo.ReturnedValue);
+            this.CachePoolAccessor.Set(key, executedInfo.ReturnedValue);
+
+            IEnumerable<CleanWithAttribute> cleanWithAttributes = executedInfo.Method.GetCustomAttributes<CleanWithAttribute>();
+            foreach (var attr in cleanWithAttributes)
+            {
+                this.CacheRelationshipManager.Register(key, attr);
+            }
         }
 
         public override void OnExecuteError(ExecuteErrorInfo executeErrorInfo)
@@ -42,13 +48,8 @@ namespace Reface.AppStarter.Attributes
             object result;
             string key = this.GetKeyWithArguments(executingInfo.Method, executingInfo.Arguments);
 
-            IEnumerable<CleanWithAttribute> cleanWithAttributes = executingInfo.Method.GetCustomAttributes<CleanWithAttribute>();
-            foreach (var attr in cleanWithAttributes)
-            {
-                this.CacheRelationshipManager.Register(key, attr);
-            }
 
-            if (this.CachePool.TryGet(key, out result))
+            if (this.CachePoolAccessor.TryGet(key, out result))
                 executingInfo.Return(result);
         }
     }

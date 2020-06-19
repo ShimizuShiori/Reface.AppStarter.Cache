@@ -1,5 +1,6 @@
 ﻿using Reface.AppStarter.Attributes;
 using Reface.AppStarter.Cache;
+using Reface.AppStarter.AppContainers;
 
 namespace Reface.AppStarter.AppModules
 {
@@ -8,13 +9,15 @@ namespace Reface.AppStarter.AppModules
     /// <see cref="CacheAttribute"/>、 
     /// <see cref="CleanCacheAttribute"/>、
     /// <see cref="CleanWithAttribute"/>
-    /// 所需要的组件。
-    /// 如果你的模块有类型标记了这些特征，你还需要添加对 <see cref="ProxyAttribute"/> 的依赖。
-    /// <see cref="ICachePool"/> 承载了缓存的存储，目前它的实现类是基于内存的。
-    /// 你可以使用 <see cref="ReplaceCreatorAttribute"/> 来替换已有的 <see cref="ICachePool"/> 实现类。
-    /// <see cref="ICacheRelationshipManager"/> 承载了 <see cref="CleanWithAttribute"/> 的功能，你也可以利用 <see cref="ReplaceCreatorAttribute"/> 替换已有的实现类。
+    /// 所需要的组件。<br />
+    /// 该模块会启动 <see cref="ProxyAppModule"/> 以加载与创建 AOP 相关的 <see cref="IAppContainer"/>。 <br />
+    /// - <see cref="ICachePool"/> 承载了缓存的存储，目前它的实现类是基于内存的。
+    /// 你可以使用 <see cref="ReplaceCreatorAttribute"/> 来替换已有的 <see cref="ICachePool"/> 实现类。<br />
+    /// - <see cref="ICacheRelationshipManager"/> 承载了 <see cref="CleanWithAttribute"/> 的功能，你也可以利用 <see cref="ReplaceCreatorAttribute"/> 替换已有的实现类。<br />
+    /// - <see cref="ICachePoolAccessor"/> 主要用来访问 <see cref="ICachePool"/> 并抛出一些事件，你可以利用 <see cref="ReplaceCreatorAttribute"/> 替换已有的实现类。
     /// </summary>
     [ComponentScanAppModule]
+    [ProxyAppModule]
     public class CacheAppModule : AppModule
     {
     }

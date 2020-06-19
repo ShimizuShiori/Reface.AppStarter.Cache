@@ -29,11 +29,11 @@ namespace Reface.AppStarter.Attributes
         public override void OnExecuted(ExecutedInfo executedInfo)
         {
             string cacheKey = this.GetKeyWithArguments(executedInfo.Method, executedInfo.Arguments);
-            this.CachePool.Clean(cacheKey);
+            this.CachePoolAccessor.Clean(cacheKey);
             var keysWillBeMoved = this.CacheRelationshipManager.GetCacheKeysWillBeRemovedWith(cacheKey);
             foreach (var item in keysWillBeMoved)
             {
-                this.CachePool.Clean(item);
+                this.CachePoolAccessor.Clean(item);
             }
         }
 

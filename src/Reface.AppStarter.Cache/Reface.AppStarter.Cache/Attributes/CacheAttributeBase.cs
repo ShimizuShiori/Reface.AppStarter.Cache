@@ -19,7 +19,7 @@ namespace Reface.AppStarter.Attributes
         /// <summary>
         /// 注入属性，不需要从外部赋值
         /// </summary>
-        public ICachePool CachePool { get; set; }
+        public ICachePoolAccessor CachePoolAccessor { get; set; }
 
         /// <summary>
         /// 注入属性，不需要从外部赋值

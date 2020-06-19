@@ -12,6 +12,10 @@
     <description>基于 Reface.AppStarter 实现的缓存功能</description>
     <copyright>Copyright © 2002 Felix. All rights reserved.</copyright>
     <tags>Reface Cache</tags>
+    <dependencies>
+      <dependency id="Reface.AppStarter" version="[2.1.7,2.2.0)"/>
+      <dependency id="Reface.AppStarter.Proxy" version="[2.0.0,2.1.0)"/>
+    </dependencies>
   </metadata>
   <files>
     <file src="bin\Debug\Reface.AppStarter.Cache.xml"/>
