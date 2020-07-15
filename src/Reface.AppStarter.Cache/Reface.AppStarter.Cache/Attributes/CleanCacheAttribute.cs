@@ -1,6 +1,4 @@
-﻿using Reface.AppStarter.Cache;
-using Reface.AppStarter.Proxy;
-using System;
+﻿using System;
 
 namespace Reface.AppStarter.Attributes
 {
@@ -8,10 +6,11 @@ namespace Reface.AppStarter.Attributes
     /// 清除缓存的特征
     /// </summary>
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
-    public class CleanCacheAttribute : CacheAttributeBase
+    public class CleanCacheAttribute : Attribute
     {
+        public string CacheKeyFormatter { get; private set; }
 
-        public ICacheRelationshipManager CacheRelationshipManager { get; set; }
+        //public ICacheRelationshipManager CacheRelationshipManager { get; set; }
 
         /// <summary>
         /// 
@@ -22,27 +21,28 @@ namespace Reface.AppStarter.Attributes
         /// 例如：Get(int id, string name)，
         /// 使用 "DemoOf{0}_{1}" 就相当于是 String.Format("DemoOf{0}_{1}", id, name);
         /// </param>
-        public CleanCacheAttribute(string cacheKeyFormatter) : base(cacheKeyFormatter)
+        public CleanCacheAttribute(string cacheKeyFormatter)
         {
+            this.CacheKeyFormatter = cacheKeyFormatter;
         }
 
-        public override void OnExecuted(ExecutedInfo executedInfo)
-        {
-            string cacheKey = this.GetKeyWithArguments(executedInfo.Method, executedInfo.Arguments);
-            this.CachePoolAccessor.Clean(cacheKey);
-            var keysWillBeMoved = this.CacheRelationshipManager.GetCacheKeysWillBeRemovedWith(cacheKey);
-            foreach (var item in keysWillBeMoved)
-            {
-                this.CachePoolAccessor.Clean(item);
-            }
-        }
+        //public override void OnExecuted(ExecutedInfo executedInfo)
+        //{
+        //    string cacheKey = this.GetKeyWithArguments(executedInfo.Method, executedInfo.Arguments);
+        //    this.CachePoolAccessor.Clean(cacheKey);
+        //    var keysWillBeMoved = this.CacheRelationshipManager.GetCacheKeysWillBeRemovedWith(cacheKey);
+        //    foreach (var item in keysWillBeMoved)
+        //    {
+        //        this.CachePoolAccessor.Clean(item);
+        //    }
+        //}
 
-        public override void OnExecuteError(ExecuteErrorInfo executeErrorInfo)
-        {
-        }
+        //public override void OnExecuteError(ExecuteErrorInfo executeErrorInfo)
+        //{
+        //}
 
-        public override void OnExecuting(ExecutingInfo executingInfo)
-        {
-        }
+        //public override void OnExecuting(ExecutingInfo executingInfo)
+        //{
+        //}
     }
 }

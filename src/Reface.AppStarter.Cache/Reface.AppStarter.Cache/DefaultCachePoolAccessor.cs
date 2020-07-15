@@ -9,10 +9,13 @@ namespace Reface.AppStarter.Cache
         private readonly ICachePool cachePool;
         private readonly IWork work;
 
-        public DefaultCachePoolAccessor(ICachePool cachePool, IWork work)
+        public DefaultCachePoolAccessor(IWork work)
         {
-            this.cachePool = cachePool;
             this.work = work;
+            ICachePool pool;
+            if (!work.TryCreateComponent<ICachePool>(out pool))
+                pool = new DefaultCachePool();
+            this.cachePool = pool;
         }
 
         public void Clean(string key)

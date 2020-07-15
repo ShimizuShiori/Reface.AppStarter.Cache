@@ -1,11 +1,9 @@
-﻿using Reface.AppStarter.Attributes;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Threading;
 
 namespace Reface.AppStarter.Cache
 {
-    [Component]
     public class DefaultCachePool : ICachePool
     {
         private readonly static ConcurrentDictionary<string, object> cachePool = new ConcurrentDictionary<string, object>();

@@ -4,7 +4,6 @@ using Reface.AppStarter.Cache.Tests.Models;
 using Reface.AppStarter.Cache.Tests.Services;
 using Reface.AppStarter.UnitTests;
 using System.Collections.Generic;
-using System.Configuration;
 
 namespace Reface.AppStarter.Cache.Tests
 {
@@ -35,6 +34,20 @@ namespace Reface.AppStarter.Cache.Tests
             Assert.AreEqual(new CacheInfo(CacheActions.Clean, "ALL_BOOK"), cacheInfos[0]);
             Assert.AreEqual(new CacheInfo(CacheActions.Clean, "ALL_BOOK"), cacheInfos[1]);
         }
+
+        [TestMethod]
+        public void CreateAndGetTwice()
+        {
+            this.BookService.Create(new Book(1, "ReadingTree"));
+            var book = this.BookService.GetById(1);
+            book = this.BookService.GetById(1);
+            var cacheInfos = this.GetCacheInfos();
+            Assert.AreEqual(3, cacheInfos.Count);
+            Assert.AreEqual(new CacheInfo(CacheActions.Clean, "ALL_BOOK"), cacheInfos[0]);
+            Assert.AreEqual(new CacheInfo(CacheActions.Set, "BOOK_1"), cacheInfos[1]);
+            Assert.AreEqual(new CacheInfo(CacheActions.Hit, "BOOK_1"), cacheInfos[2]);
+        }
+
         [TestMethod]
         public void CreateGetById2TimesAndCreateAndGet()
         {

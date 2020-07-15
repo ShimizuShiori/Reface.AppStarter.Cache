@@ -61,16 +61,16 @@
       <HintPath>..\packages\NLog.1.0.0.505\lib\NLog.dll</HintPath>
     </Reference>
     <Reference Include="Reface.AppStarter, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Reface.AppStarter.2.1.12\lib\net461\Reface.AppStarter.dll</HintPath>
+      <HintPath>..\packages\Reface.AppStarter.2.1.26.2\lib\net461\Reface.AppStarter.dll</HintPath>
     </Reference>
-    <Reference Include="Reface.AppStarter.Proxy, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Reface.AppStarter.Proxy.2.0.0\lib\net461\Reface.AppStarter.Proxy.dll</HintPath>
+    <Reference Include="Reface.AppStarter.Proxy, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Reface.AppStarter.Proxy.2.1.1.1\lib\net461\Reface.AppStarter.Proxy.dll</HintPath>
     </Reference>
     <Reference Include="Reface.CommandBus, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Reface.CommandBus.2.0.1\lib\net461\Reface.CommandBus.dll</HintPath>
     </Reference>
     <Reference Include="Reface.EventBus, Version=3.2.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Reface.EventBus.3.2.7\lib\net40\Reface.EventBus.dll</HintPath>
+      <HintPath>..\packages\Reface.EventBus.3.3.2.1\lib\net40\Reface.EventBus.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -87,6 +87,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="TinyMapper, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TinyMapper.3.0.3\lib\net40\TinyMapper.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />

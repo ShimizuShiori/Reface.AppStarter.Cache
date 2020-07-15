@@ -2,6 +2,7 @@
 using Reface.AppStarter.Cache.Events;
 using Reface.EventBus;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Reface.AppStarter.Cache.Tests.Listeners
 {
